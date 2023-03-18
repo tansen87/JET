@@ -41,7 +41,7 @@ df = jet.add_direction(df)
 # step 12 -> add DC values
 df = jet.add_dc(df)
 # last, you can check the templates is correct or incorrect
-j
+jet.check(df)
 ```
 
 Function
