@@ -80,9 +80,6 @@ Function
   * 取末级科目
 * `screen`:
   * 条件筛选(根据末级科目可筛选出需要的结果)
-* `calculation_dc`:
-  * 计算借贷方向
-  * 调整借贷值的正负
 * `write`:
   * 保存数据为txt格式,分隔符为|且编码为utf-16le
 * `check`:
