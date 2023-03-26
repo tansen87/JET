@@ -23,16 +23,16 @@ df = jet.insert_column(df)
 df = jet.reset_column_simplify(
     df, 
     entity="input entity",
-	companyName="input company name",
-	currency="input currency",
-	dateEffective="input [date effctive] column name",
-	signedAmountEC="input [Signed Journal Amount] column name",
-	unsignedDebitAmountEC="input [Unsigned Debit Amount EC] column name",
-	unsignedCreditAmountEC="input [Unsigned Credit Amount EC] column name",
-	journalNumber="input [Journal Number] column name",
-	lineDescription="input [Line Description] column name",
-	accountNumber="input [Account Number] column name",
-	accountDescription="input [Account Description] column name")
+    companyName="input company name",
+    currency="input currency",
+    dateEffective="input [date effctive] column name",
+    signedAmountEC="input [Signed Journal Amount] column name",
+    unsignedDebitAmountEC="input [Unsigned Debit Amount EC] column name",
+    unsignedCreditAmountEC="input [Unsigned Credit Amount EC] column name",
+    journalNumber="input [Journal Number] column name",
+    lineDescription="input [Line Description] column name",
+    accountNumber="input [Account Number] column name",
+    accountDescription="input [Account Description] column name")
 # step 3 -> get standard templates
 df = jet.get(df)
 # step 4 -> convert date formate
@@ -51,7 +51,7 @@ df = jet.add_number(df)
 df = jet.add_month(df)
 # step 11 -> add DC Indicator
 df = jet.add_direction(df)
-# step 12 -> add DC amoun
+# step 12 -> add DC amount
 df = jet.add_dc_amount(df)
 # last, you can check the templates is correct or incorrect
 jet.check(df)
@@ -87,8 +87,8 @@ Function
   * 添加 *Financial Period*
 * `add_direction`:
   * 添加*DC Indicator*
-* `add_dc`:
-  * 添加*D C* values
+* `add_dc_amount`:
+  * 添加*D C* amount
 * `get_last_account`:
   * 取末级科目
 * `screen`:
@@ -102,3 +102,4 @@ Function
   * 检查 *Financial Period*
   * 检查 *Entity*
   * 检查 *Currency*、 *Currency EC*
+  * ...
