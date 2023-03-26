@@ -4,7 +4,7 @@
 
 Need pip
 
-* `pip install rich`
+* `pip install pypinyin`
 
 Usage
 
@@ -16,10 +16,23 @@ jet = journalsTemplate()
 
 df = pd.read_csv()
 
+""" just create JET GL template """
 # step 1 -> insert column
 df = jet.insert_column(df)
 # step 2 -> reset column
-df = jet.reset_column(df, entity="Com")
+df = jet.reset_column_simplify(
+    df, 
+    entity="input entity",
+	companyName="input company name",
+	currency="input currency",
+	dateEffective="input [date effctive] column name",
+	signedAmountEC="input [Signed Journal Amount] column name",
+	unsignedDebitAmountEC="input [Unsigned Debit Amount EC] column name",
+	unsignedCreditAmountEC="input [Unsigned Credit Amount EC] column name",
+	journalNumber="input [Journal Number] column name",
+	lineDescription="input [Line Description] column name",
+	accountNumber="input [Account Number] column name",
+	accountDescription="input [Account Description] column name")
 # step 3 -> get standard templates
 df = jet.get(df)
 # step 4 -> convert date formate
@@ -38,8 +51,8 @@ df = jet.add_number(df)
 df = jet.add_month(df)
 # step 11 -> add DC Indicator
 df = jet.add_direction(df)
-# step 12 -> add DC values
-df = jet.add_dc(df)
+# step 12 -> add DC amoun
+df = jet.add_dc_amount(df)
 # last, you can check the templates is correct or incorrect
 jet.check(df)
 ```
